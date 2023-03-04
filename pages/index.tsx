@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { useEffect } from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import Logo from "../src/images/VisionX_Logo.svg";
+import Logo from "../src/images/StaR_Logo.svg";
 import Navbar from "../components/navbar/Navbar";
 import CookieBanner from "../components/CookieBanner";
 import AlertBox from "../components/alert";
@@ -35,7 +35,7 @@ const Index: NextPage = () => {
 
   return (
     <>
-      <LandingPage>
+      <IndexWraper>
         <Navbar />
         <ImageWraper>
           <Image
@@ -46,48 +46,35 @@ const Index: NextPage = () => {
             priority={true}
           />
         </ImageWraper>
-        <div className="titel">VisionX</div>
-        <div className="subtitel">Report Management System</div>
+        <div className="subtitel">Standards der Radiologie</div>
         {showCookieBanner && <CookieBanner />}
         {alertState.type !== "none" && <AlertBox />}
-      </LandingPage>
+      </IndexWraper>
     </>
   );
 };
 
-const LandingPage = styled.div`
+const IndexWraper = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  color: #ff0000;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
   overflow: scroll;
 
   @media screen and (min-width: 100vh) {
     /* The width is greater than the height */
   }
 
-  .titel {
-    font-size: 8vmax;
-    letter-spacing: 2.5rem;
-  }
-
   .subtitel {
-    font-size: 2.5vmax;
-    letter-spacing: 0.5rem;
+    font-size: 4vmax;
+    letter-spacing: 0.4rem;
     margin: 2rem;
   }
 
   // phone
   @media (max-width: 600px) {
-    .titel {
-      font-size: 7vmax;
-      letter-spacing: 2.5rem;
-    }
-
     .subtitel {
       font-size: 3vmax;
       letter-spacing: 1.2rem;
@@ -97,11 +84,6 @@ const LandingPage = styled.div`
 
   // tablet portrait
   @media (min-width: 601px) and (max-width: 900px) {
-    .titel {
-      font-size: 12vmax;
-      letter-spacing: 2.5rem;
-    }
-
     .subtitel {
       font-size: 5vmax;
       letter-spacing: 1.3rem;

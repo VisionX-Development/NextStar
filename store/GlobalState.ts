@@ -5,10 +5,6 @@ import UserStore from "./UserState";
 import { UserStateModel } from "./UserState";
 
 interface GlobalStateModel {
-  //Auth State
-  isLoggedIn: boolean;
-  setIsLoggedIn: Action<GlobalStateModel, boolean>;
-
   // User State
   user: UserStateModel;
   // Cookie Consent
@@ -22,11 +18,6 @@ interface GlobalStateModel {
 }
 
 const GlobalState = createStore<GlobalStateModel>({
-  //Auth State
-  isLoggedIn: false,
-  setIsLoggedIn: action((state, payload: boolean) => {
-    state.isLoggedIn = payload;
-  }),
   // User State
   user: UserStore,
 

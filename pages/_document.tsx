@@ -46,7 +46,7 @@ export default class MyDocument extends Document<any> {
         <Head>
           {this.props.styleTags /*rendering the actually stylesheet*/}
           {CssBaseline.flush()}
-          <meta name="Home of VisionX" content="Home of VisionX" />
+          <meta name="StaR App" content="Standards of Radiology" />
           <style>
             @import
             url(https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap);

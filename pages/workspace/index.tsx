@@ -1,26 +1,27 @@
 import type { NextPage } from "next";
 import { getSession } from "next-auth/client";
 import styled from "styled-components";
+import Link from "next/link";
+import Navbar from "../../components/navbar/Navbar";
 
-const Home: NextPage = () => {
+const Workspace: NextPage = () => {
   return (
-    <>
-      <HomeWrapper>
-        <div className="titel">Home</div>
-      </HomeWrapper>
-    </>
+    <WorkspaceWrapper>
+      <Navbar />
+      <Link href="/">
+        <div className="titel">Back Home</div>
+      </Link>
+    </WorkspaceWrapper>
   );
 };
 
-const HomeWrapper = styled.div`
+const WorkspaceWrapper = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  color: #ff0000;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
   overflow: scroll;
 `;
 
@@ -41,4 +42,4 @@ export async function getServerSideProps(context: any) {
   };
 }
 
-export default Home;
+export default Workspace;

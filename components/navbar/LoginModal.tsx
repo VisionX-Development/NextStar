@@ -26,7 +26,7 @@ const SignupSchema = Yup.object().shape({
     ),
   email: Yup.string()
     .email("Email ist ungültig. Bitte korrekte Email eingeben.")
-    .required("Required"),
+    .required("Bitte geben Sie eine Email ein."),
 });
 
 export const LoginModal: React.FC<NavbarProps> = (props: NavbarProps) => {
@@ -51,7 +51,7 @@ export const LoginModal: React.FC<NavbarProps> = (props: NavbarProps) => {
 
     if (result) {
       if (!result.error) {
-        router.replace("/home");
+        router.replace("/workspace");
       } else {
         setAlert({ message: result.error, type: "warning" });
       }
@@ -77,9 +77,14 @@ export const LoginModal: React.FC<NavbarProps> = (props: NavbarProps) => {
               placeholder="Email"
               size="xl"
               fullWidth={true}
+              autoFocus={true}
             />
 
-            <ErrorMessage name="email" />
+            <ErrorMessage
+              name="email"
+              component="div"
+              className="error-message"
+            />
             <Spacer />
             <Field
               id="password"
@@ -90,7 +95,11 @@ export const LoginModal: React.FC<NavbarProps> = (props: NavbarProps) => {
               size="xl"
               fullWidth={true}
             />
-            <ErrorMessage name="password" />
+            <ErrorMessage
+              name="password"
+              component="div"
+              className="error-message"
+            />
             <Spacer y={2} />
             <Button
               type="submit"
@@ -110,18 +119,20 @@ const FormWrapper = styled.div`
   width: 40vw;
   padding: 30px;
   font-size: 1.5rem;
-
-  .nextui-c-hzQjrs {
-    color: #fff;
-    font-size: 2rem;
-  }
+  caret-color: black;
+  max-height: 40vh;
 
   input {
     width: 100%;
     height: 40px;
     border-radius: 5px;
     padding: 7px;
-    color: #000000;
+    color: black;
     font-size: 2rem;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 1.5rem;
   }
 `;
