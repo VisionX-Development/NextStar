@@ -46,7 +46,7 @@ const Index: NextPage = () => {
             priority={true}
           />
         </ImageWraper>
-        <div className="subtitel">Standards der Radiologie</div>
+        <div className="subtitle">Standards der Radiologie</div>
         {showCookieBanner && <CookieBanner />}
         {alertState.type !== "none" && <AlertBox />}
       </IndexWraper>
@@ -67,10 +67,11 @@ const IndexWraper = styled.div`
     /* The width is greater than the height */
   }
 
-  .subtitel {
+  .subtitle {
     font-size: 4vmax;
     letter-spacing: 0.4rem;
     margin: 2rem;
+    text-align: center;
   }
 
   // phone

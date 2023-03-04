@@ -14,13 +14,10 @@ import { useRouter } from "next/router";
 const Navbar: React.FC<{}> = () => {
   const { isShown, toggle } = useModal();
 
-  const onConfirm = () => toggle();
-  const onCancel = () => toggle();
-
   const [session, loading] = useSession();
 
   const handleSignOut = async () => {
-    signOut({ redirect: false });
+    signOut({ redirect: true });
   };
 
   const router = useRouter();
@@ -38,7 +35,7 @@ const Navbar: React.FC<{}> = () => {
           <Link href="/workspace">Arbeitsplatz</Link>
         </MenueWrapper>
       )}
-      <ImageWraper data-testid="log_in_icon" onClick={toggle}>
+      <ImageWraper>
         {session ? (
           <Image
             alt="log_out_icon"
@@ -50,10 +47,12 @@ const Navbar: React.FC<{}> = () => {
         ) : (
           <>
             <Image
+              data-testid="log_in_icon"
               alt="log_in_icon"
               src={log_in_icon}
               layout="responsive"
               priority={true}
+              onClick={toggle}
             />
           </>
         )}
@@ -62,7 +61,7 @@ const Navbar: React.FC<{}> = () => {
         isShown={isShown}
         hide={toggle}
         headerText="Login"
-        modalContent={<LoginModal onConfirm={onConfirm} onCancel={onCancel} />}
+        modalContent={<LoginModal />}
       />
     </NavMain>
   );

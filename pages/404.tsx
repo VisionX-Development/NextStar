@@ -19,7 +19,7 @@ const ErrorPage: NextPage = () => {
         </ImageWraper>
       </Link>
       <h1>404</h1>
-      <div className="subtitel">Dieser Pfad existiert leider nicht.</div>
+      <div className="subtitel">Seite existiert nicht (mehr)</div>
       <Link href="/">Zurück zur App</Link>
     </IndexWraper>
   );

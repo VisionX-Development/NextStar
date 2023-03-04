@@ -104,10 +104,6 @@ const StyledModal = styled.div`
   position: relative;
   margin: auto;
   border-radius: 8px;
-
-  .evfTIp {
-    max-height: unset;
-  }
 `;
 
 const Header = styled.div`
