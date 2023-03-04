@@ -17,7 +17,7 @@ const Index: NextPage = () => {
 
   const checkCookie = (): boolean => {
     const cookies = new Cookies();
-    const hasCookie = cookies.get("VisionX_Privacy_Policy");
+    const hasCookie = cookies.get("StaR_Privacy");
     return hasCookie;
   };
 

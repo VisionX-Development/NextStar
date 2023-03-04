@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <NextUIProvider>
         <GlobalStyles>
           <Head>
-            <title>VisionX - Webdevelopment</title>
+            <title>StaR</title>
           </Head>
           <StoreProvider store={GlobalState}>
             <Component {...pageProps} />

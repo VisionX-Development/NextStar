@@ -11,7 +11,7 @@ const CookieBanner = (): JSX.Element => {
   const setCookie = () => {
     //set and Accept_Cookies_VisionX Cookie
     const cookies = new Cookies();
-    cookies.set("VisionX_Privacy_Policy", true, {
+    cookies.set("StaR_Privacy", true, {
       path: "/",
       maxAge: 15768000,
     });
@@ -29,11 +29,11 @@ const CookieBanner = (): JSX.Element => {
 
   return (
     <CookieWrapper>
-      <h1 data-testid="cookie warning"> Cookies verbessern die Darstellung</h1>
+      <h1 data-testid="cookie warning"> Cookies verbessern die Darstellung!</h1>
       <div className="link">
         <Link href="/">Infos zum Datenschutz</Link>
       </div>
-      <button onClick={handleCookieAccept}>OK</button>
+      <button onClick={handleCookieAccept}>Akzeptieren</button>
       <button onClick={handleCookieRejection}>Ablehnen</button>
     </CookieWrapper>
   );
@@ -48,27 +48,32 @@ const CookieWrapper = styled.div`
   justify-content: space-around;
   border-radius: 10px;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.8);
-  background: rgba(24, 24, 24, 0.9);
+  background: rgba(24, 24, 24, 0.4);
   text-align: center;
-  color: #ff0000;
+  color: black;
   text-decoration: none;
-  font-size: 1rem;
   margin: 1vmax;
   z-index: 1;
   position: sticky;
   bottom: 0;
   letter-spacing: 0.2rem;
   width: 100vw;
-  font-size: 1.2vmax;
+  font-size: 1 rem;
+
+  h1 {
+    font-size: 2vmax;
+    font-weight: bold;
+    margin: 1vmax;
+  }
 
   button {
-    border: 1px solid #ff0000;
+    border: 1px solid black;
     border-radius: 10px;
-    height: 7vmax;
+    height: 4vmax;
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.6);
-    background: rgba(95, 95, 95, 0.3);
-    color: rgb(255, 0, 0);
-    font-size: 2.5vmax;
+    background: rgba(95, 95, 95, 0.4);
+    color: black;
+    font-size: 1.5vmax;
     font-family: inherit;
     display: flex;
     flex-direction: column;
@@ -96,8 +101,8 @@ const CookieWrapper = styled.div`
   }
 
   .link a {
-    font-size: 2vmax;
-    color: #ff0000;
+    font-size: 1.5vmax;
+    color: black;
     text-decoration: none;
   }
 
